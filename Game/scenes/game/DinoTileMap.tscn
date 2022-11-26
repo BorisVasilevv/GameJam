@@ -3,10 +3,10 @@
 [ext_resource path="res://sprites/sand_ground.png" type="Texture" id=1]
 [ext_resource path="res://sprites/orange_wall.png" type="Texture" id=2]
 [ext_resource path="res://sprites/night_sky.png" type="Texture" id=3]
-[ext_resource path="res://scenes/dino.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game/dino.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/moon.png" type="Texture" id=5]
 [ext_resource path="res://sprites/night_sky1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/ground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "night_sky.png 0"
