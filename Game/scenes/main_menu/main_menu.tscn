@@ -41,7 +41,7 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
-	scrolling_speed = rng.randf_range(50, 120)
+	scrolling_speed = rng.randi_range(-1, 1) * rng.randf_range(50, 120)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,7 +55,7 @@ size = 25
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=13]
-size = 40
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
@@ -103,6 +103,7 @@ tracks/0/keys = {
 }
 
 [node name="main_menu" type="Control"]
+modulate = Color( 0.823529, 0.6, 0.415686, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
@@ -120,7 +121,7 @@ script = SubResource( 15 )
 [node name="Background" type="ColorRect" parent="CanvasLayer/ParallaxBackground"]
 margin_right = 1024.0
 margin_bottom = 600.0
-color = Color( 0.824219, 0.600914, 0.417604, 1 )
+color = Color( 0.823529, 0.6, 0.415686, 1 )
 
 [node name="spoiler" type="Label" parent="CanvasLayer/ParallaxBackground"]
 anchor_left = 0.5
@@ -138,7 +139,7 @@ align = 1
 autowrap = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_mirroring = Vector2( 1150, 600 )
+motion_mirroring = Vector2( 1550, 900 )
 
 [node name="Beer1" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
 position = Vector2( 1026.9, 348 )
@@ -234,8 +235,106 @@ texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 169, 1, 12, 31 )
 
+[node name="Beer18" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 434.767, 843.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 102, 2, 16, 29 )
+
+[node name="Beer19" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 830.767, 843.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
+[node name="Beer23" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1228, 843 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
+[node name="Beer20" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 41.0679, 843.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
+[node name="Beer13" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1344, 531 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.8313, 0.563026 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 27, 30 )
+
+[node name="Beer14" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1222.07, 232.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
 [node name="Beer6" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
 position = Vector2( 644.767, 334.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 66, 1, 27, 30 )
+
+[node name="Beer21" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1909.9, 108.816 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -118.84, 23.4859 )
+region_enabled = true
+region_rect = Rect2( 132, 0, 19, 32 )
+
+[node name="Beer22" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1419.77, 334.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 66, 1, 27, 30 )
+
+[node name="Beer15" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1024.56, 689.106 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 34, 1, 27, 30 )
+
+[node name="Beer16" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 234.862, 689.106 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 34, 1, 27, 30 )
+
+[node name="Beer17" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 642.423, 675.304 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 66, 1, 27, 30 )
+
+[node name="Beer24" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1415, 690 )
 rotation = 0.261799
 scale = Vector2( 4.1875, 4.1875 )
 texture = ExtResource( 4 )
@@ -245,15 +344,15 @@ region_rect = Rect2( 66, 1, 27, 30 )
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -158.0
-margin_top = 307.0
-margin_right = 158.0
-margin_bottom = 404.0
+margin_left = -227.5
+margin_top = 298.0
+margin_right = 227.5
+margin_bottom = 395.0
 
 [node name="start_btn" type="Button" parent="CanvasLayer/Buttons"]
 light_mask = 2
-margin_right = 355.0
-margin_bottom = 54.0
+margin_right = 455.0
+margin_bottom = 68.0
 focus_neighbour_top = NodePath("../exit_btn")
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -270,10 +369,10 @@ custom_styles/normal = SubResource( 7 )
 text = "- press start -"
 
 [node name="exit_btn" type="Button" parent="CanvasLayer/Buttons"]
-margin_left = 125.0
-margin_top = 58.0
-margin_right = 229.0
-margin_bottom = 80.0
+margin_left = 175.0
+margin_top = 72.0
+margin_right = 279.0
+margin_bottom = 94.0
 focus_neighbour_bottom = NodePath("../start_btn")
 size_flags_horizontal = 4
 size_flags_vertical = 2
