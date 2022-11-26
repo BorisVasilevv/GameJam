@@ -1,0 +1,311 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://fonts/RetroFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Sonic 1 Title Screen Filled.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/RetroFont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sources/Beers.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+resource_name = "menu"
+script/source = "extends Control
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$CanvasLayer/Buttons/start_btn.grab_focus()
+	$CanvasLayer/AnimationPlayer.play(\"anim_spoiler\")
+
+func _on_start_btn_pressed():
+	get_tree().change_scene(\"res://scenes/game/game.tscn\")
+
+func _on_exit_btn_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id=15]
+resource_name = "bg_move"
+script/source = "extends ParallaxBackground
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+export (float) var scrolling_speed
+var rng = RandomNumberGenerator.new()
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	rng.randomize()
+	scrolling_speed = rng.randf_range(50, 120)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	scroll_offset.y += scrolling_speed * delta
+	scroll_offset.x += scrolling_speed * delta
+"
+
+[sub_resource type="DynamicFont" id=16]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=17]
+resource_name = "anim_spoiler"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2.98023e-08, 0.8, 1.54 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.803922, 0.803922, 0.803922, 0.235294 ), Color( 1, 1, 1, 0.541176 ), Color( 1, 1, 1, 0.298039 ) ]
+}
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ],
+"_edit_vertical_guides_": [ 1024.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+layer = 0
+script = SubResource( 15 )
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/ParallaxBackground"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.824219, 0.600914, 0.417604, 1 )
+
+[node name="spoiler" type="Label" parent="CanvasLayer/ParallaxBackground"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -409.0
+margin_top = -117.0
+margin_right = 451.0
+margin_bottom = -15.0
+custom_colors/font_color = Color( 0.926471, 0.926471, 0.926471, 0.426471 )
+custom_fonts/font = SubResource( 16 )
+text = "УПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ!"
+align = 1
+autowrap = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2( 1150, 600 )
+
+[node name="Beer1" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1026.9, 348 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 34, 1, 27, 30 )
+
+[node name="Beer2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 940.905, 531 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.8313, 0.563026 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 27, 30 )
+
+[node name="Beer9" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 163, 531 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.8313, 0.563026 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 27, 30 )
+
+[node name="Beer3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 434.767, 232.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 102, 2, 16, 29 )
+
+[node name="Beer4" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 940.905, 531 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -118.84, 23.4859 )
+region_enabled = true
+region_rect = Rect2( 132, 0, 19, 32 )
+
+[node name="Beer10" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1134.9, 108.816 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.8313, 0.563026 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 27, 30 )
+
+[node name="Beer11" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 357, 108.816 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -26.8313, 0.563026 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 27, 30 )
+
+[node name="Beer12" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1134.9, 108.816 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+offset = Vector2( -118.84, 23.4859 )
+region_enabled = true
+region_rect = Rect2( 132, 0, 19, 32 )
+
+[node name="Beer5" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 830.767, 232.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
+[node name="Beer7" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 237.206, 348 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 34, 1, 27, 30 )
+
+[node name="Beer8" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 41.0679, 232.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 169, 1, 12, 31 )
+
+[node name="Beer6" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 644.767, 334.197 )
+rotation = 0.261799
+scale = Vector2( 4.1875, 4.1875 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 66, 1, 27, 30 )
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -158.0
+margin_top = 307.0
+margin_right = 158.0
+margin_bottom = 404.0
+
+[node name="start_btn" type="Button" parent="CanvasLayer/Buttons"]
+light_mask = 2
+margin_right = 355.0
+margin_bottom = 54.0
+focus_neighbour_top = NodePath("../exit_btn")
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_colors/font_color_focus = Color( 0.937255, 0.760784, 0.607843, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.937255, 0.760784, 0.607843, 0.0384615 )
+custom_colors/font_color_pressed = Color( 0.772549, 0.4, 0.00392157, 1 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "- press start -"
+
+[node name="exit_btn" type="Button" parent="CanvasLayer/Buttons"]
+margin_left = 125.0
+margin_top = 58.0
+margin_right = 229.0
+margin_bottom = 80.0
+focus_neighbour_bottom = NodePath("../start_btn")
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme = SubResource( 2 )
+custom_colors/font_color_focus = Color( 0.937255, 0.760784, 0.607843, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.937255, 0.760784, 0.607843, 1 )
+custom_colors/font_color_pressed = Color( 0.772549, 0.4, 0.00392157, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "press exit"
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -430.0
+margin_top = 163.0
+margin_right = 430.0
+margin_bottom = 265.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "NAME OF THE GAME"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+pause_mode = 1
+physics_interpolation_mode = 1
+root_node = NodePath("../ParallaxBackground/spoiler")
+anims/anim_spoiler = SubResource( 17 )
+
+[connection signal="pressed" from="CanvasLayer/Buttons/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/exit_btn" to="." method="_on_exit_btn_pressed"]
