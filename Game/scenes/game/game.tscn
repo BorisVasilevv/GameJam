@@ -27,10 +27,10 @@ texture = ExtResource( 5 )
 position = Vector2( 1536, 301 )
 texture = ExtResource( 4 )
 
-[node name="BarBackground" type="Sprite" parent="."]
+[node name="BarBackground" type="Sprite" parent="TextureRect"]
 position = Vector2( 3580, 299 )
 texture = ExtResource( 2 )
 
-[node name="Police" type="Sprite" parent="."]
+[node name="Police" type="Sprite" parent="TextureRect"]
 position = Vector2( 4605, 300 )
 texture = ExtResource( 3 )
