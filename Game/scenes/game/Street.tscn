@@ -20,36 +20,47 @@ visible = false
 position = Vector2( 0, 480 )
 
 [node name="ground31" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 384 )
 
 [node name="ground42" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 320 )
 
 [node name="ground44" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 128 )
 
 [node name="ground45" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 160 )
 
 [node name="ground46" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 192 )
 
 [node name="ground47" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 224 )
 
 [node name="ground48" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 256 )
 
 [node name="ground49" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 288 )
 
 [node name="ground43" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 352 )
 
 [node name="ground39" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 416 )
 
 [node name="ground40" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -32, 448 )
 
 [node name="ground41" parent="." instance=ExtResource( 2 )]
@@ -81,36 +92,47 @@ visible = false
 position = Vector2( 992, 480 )
 
 [node name="ground34" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 416 )
 
 [node name="ground37" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 352 )
 
 [node name="ground50" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 160 )
 
 [node name="ground51" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 192 )
 
 [node name="ground52" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 224 )
 
 [node name="ground53" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 256 )
 
 [node name="ground54" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 288 )
 
 [node name="ground55" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 320 )
 
 [node name="ground38" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 384 )
 
 [node name="ground35" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 448 )
 
 [node name="ground36" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1024, 480 )
 
 [node name="ground33" parent="." instance=ExtResource( 2 )]
