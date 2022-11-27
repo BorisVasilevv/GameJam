@@ -280,7 +280,7 @@ position = Vector2( 80, 408 )
 [node name="portal" type="Area2D" parent="."]
 position = Vector2( 950, 341 )
 script = ExtResource( 8 )
-scene = "res://scenes/game/Hell.tscn"
+scene = "res://scenes/game/Procuror.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
 position = Vector2( 43, 1 )

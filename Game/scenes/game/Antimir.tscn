@@ -189,7 +189,7 @@ position = Vector2( 544, 336 )
 
 [node name="DialogAreaBomj" parent="." instance=ExtResource( 5 )]
 position = Vector2( 819, 344 )
-dialog_key = "bomj"
+dialog_key = "antiworld"
 
 [node name="CollisionShape2D" parent="DialogAreaBomj" index="0"]
 position = Vector2( -203, 32 )
