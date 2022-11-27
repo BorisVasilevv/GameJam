@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sources/barBackground.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/mainCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BarBackground" type="Sprite" parent="TextureRect"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ground" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 0, 592 )
+
+[node name="ground2" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 992, 592 )
+
+[node name="ground3" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 960, 592 )
+
+[node name="ground4" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 928, 592 )
+
+[node name="ground5" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 896, 592 )
+
+[node name="ground6" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 864, 592 )
+
+[node name="ground7" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 832, 592 )
+
+[node name="ground8" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 800, 592 )
+
+[node name="ground9" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 768, 592 )
+
+[node name="ground10" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 736, 592 )
+
+[node name="ground11" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 704, 592 )
+
+[node name="ground12" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 672, 592 )
+
+[node name="ground13" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 640, 592 )
+
+[node name="ground14" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 608, 592 )
+
+[node name="ground15" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 576, 592 )
+
+[node name="ground16" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 544, 592 )
+
+[node name="ground17" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 512, 592 )
+
+[node name="ground18" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 480, 592 )
+
+[node name="ground19" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 448, 592 )
+
+[node name="ground20" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 416, 592 )
+
+[node name="ground21" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 384, 592 )
+
+[node name="ground22" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 352, 592 )
+
+[node name="ground23" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 320, 592 )
+
+[node name="ground24" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 288, 592 )
+
+[node name="ground25" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 256, 592 )
+
+[node name="ground26" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 224, 592 )
+
+[node name="ground27" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 192, 592 )
+
+[node name="ground28" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 160, 592 )
+
+[node name="ground29" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 128, 592 )
+
+[node name="ground30" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 96, 592 )
+
+[node name="ground31" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 64, 592 )
+
+[node name="ground32" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 32, 592 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 440 )

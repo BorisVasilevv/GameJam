@@ -83,6 +83,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -1 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
