@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/NPC/MainCharacter.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/mainCharacter.cs" type="Script" id=2]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.0
 height = 192.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 88, 141 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -18,3 +21,11 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
 shape = SubResource( 1 )
+
+[node name="DialogInteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteractionArea"]
+position = Vector2( 14, -9 )
+shape = SubResource( 2 )
