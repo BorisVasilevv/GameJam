@@ -2,16 +2,14 @@ extends Node2D
 
 onready var dialog_player = $DialogPlayer
 onready var collider_bomj = $StaticBody2D/CollisionShape2D
-onready var read_letter_btn = $read_letter_btn
 var flag = false
-var dead_count = 0
+var death_count = 0
 
 func _process(delta):
 	if dialog_player.flag == true:
 		collider_bomj.disabled = true
-		read_letter_btn.visible = true
 	if Input.is_key_pressed(KEY_Y) and flag:
-		dead_count += 1
+		death_count += 1
 		dialog_player.background.visible = false
 		dialog_player.text_label.text = ""
 		flag = false

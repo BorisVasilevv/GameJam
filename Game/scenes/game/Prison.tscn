@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/game/NPCscene/Monkey3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=2]
@@ -6,10 +6,39 @@
 [ext_resource path="res://scenes/game/mainCharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/game/NPCscene/Monkey2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sources/PrisonBackground.png" type="Texture" id=6]
+[ext_resource path="res://scenes/game/Prison.gd" type="Script" id=7]
+[ext_resource path="res://scenes/game/Area2D.gd" type="Script" id=8]
+[ext_resource path="res://ui/DialogPlayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/game/DialogArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fonts/Minecraftia.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="ImageTexture" id=1]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.5, 192.75 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 176.125, 151.688 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.878431, 0.847059, 0.345098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.517647, 0.443137, 0.368627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.247059, 0.2, 0.184314, 1 )
+
+[sub_resource type="GDScript" id=8]
+resource_name = "read_letter_btn"
+script/source = "extends Button
+"
+
 [node name="Node2D2" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -236,9 +265,6 @@ position = Vector2( 64, 544 )
 visible = false
 position = Vector2( 32, 544 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 408 )
-
 [node name="StaticBody2D2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 744, 240 )
 
@@ -247,3 +273,45 @@ position = Vector2( 528, 208 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 624, 224 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 408 )
+
+[node name="portal" type="Area2D" parent="."]
+position = Vector2( 950, 341 )
+script = ExtResource( 8 )
+scene = "res://scenes/game/Hell.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2( 43, 1 )
+shape = SubResource( 2 )
+
+[node name="DialogAreaBomj" parent="." instance=ExtResource( 10 )]
+position = Vector2( 819, 344 )
+dialog_key = "cell"
+
+[node name="CollisionShape2D" parent="DialogAreaBomj" index="0"]
+position = Vector2( -147.125, -13.6875 )
+shape = SubResource( 3 )
+
+[node name="DialogPlayer" parent="." instance=ExtResource( 9 )]
+scene_text_file = "res://json/world_dialog.json"
+
+[node name="read_letter_btn" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 239.0
+margin_bottom = 87.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+text = "Прочитать письмо"
+script = SubResource( 8 )
+
+[connection signal="body_entered" from="portal" to="portal" method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="read_letter_btn" to="." method="_on_read_letter_btn_pressed"]
+
+[editable path="DialogAreaBomj"]

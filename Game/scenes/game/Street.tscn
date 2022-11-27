@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sources/streetBackground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://ui/DialogPlayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Minecraftia.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/game/Street.gd" type="Script" id=8]
+[ext_resource path="res://scenes/game/Area2D.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 13.5, 163.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 138.5 )
@@ -90,6 +94,37 @@ position = Vector2( -32, 448 )
 visible = false
 position = Vector2( -32, 480 )
 
+[node name="ground50" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 128 )
+
+[node name="ground51" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 160 )
+
+[node name="ground52" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 192 )
+
+[node name="ground53" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 224 )
+
+[node name="ground54" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 256 )
+
+[node name="ground55" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 288 )
+
+[node name="ground56" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 352 )
+
+[node name="ground57" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 416 )
+
+[node name="ground58" parent="blocks" instance=ExtResource( 2 )]
+position = Vector2( 1024, 448 )
+
+[node name="ground59" parent="blocks" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -32, 480 )
+
 [node name="ground2" parent="blocks" instance=ExtResource( 2 )]
 visible = false
 position = Vector2( 256, 480 )
@@ -113,39 +148,6 @@ position = Vector2( 928, 480 )
 [node name="ground32" parent="blocks" instance=ExtResource( 2 )]
 visible = false
 position = Vector2( 992, 480 )
-
-[node name="ground34" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 416 )
-
-[node name="ground37" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 352 )
-
-[node name="ground50" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 160 )
-
-[node name="ground51" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 192 )
-
-[node name="ground52" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 224 )
-
-[node name="ground53" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 256 )
-
-[node name="ground54" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 288 )
-
-[node name="ground55" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 320 )
-
-[node name="ground38" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 384 )
-
-[node name="ground35" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 448 )
-
-[node name="ground36" parent="blocks" instance=ExtResource( 2 )]
-position = Vector2( 1024, 480 )
 
 [node name="ground33" parent="blocks" instance=ExtResource( 2 )]
 visible = false
@@ -247,6 +249,15 @@ position = Vector2( 64, 480 )
 visible = false
 position = Vector2( 32, 480 )
 
+[node name="portal" type="Area2D" parent="."]
+position = Vector2( 1039, 263 )
+script = ExtResource( 9 )
+scene = "res://scenes/game/HomeBackground.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2( -37, 6 )
+shape = SubResource( 8 )
+
 [node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 776, 224 )
 
@@ -278,6 +289,7 @@ enabled_focus_mode = 0
 text = "Прочитать письмо"
 script = SubResource( 4 )
 
+[connection signal="body_entered" from="portal" to="portal" method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="read_letter_btn" to="." method="_on_read_letter_btn_pressed"]
 
 [editable path="DialogAreaBomj"]

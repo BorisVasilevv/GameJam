@@ -2,16 +2,18 @@ extends Node2D
 
 onready var dialog_player = $DialogPlayer
 onready var collider_bomj = $StaticBody2D/CollisionShape2D
-onready var read_letter_btn = $read_letter_btn
+onready var collider_bomj1 = $StaticBody2D2/CollisionShape2D
+onready var collider_bomj2 = $StaticBody2D3/CollisionShape2D
 var flag = false
-var dead_count = 0
+var death_count = 0
 
 func _process(delta):
 	if dialog_player.flag == true:
 		collider_bomj.disabled = true
-		read_letter_btn.visible = true
+		collider_bomj1.disabled = true
+		collider_bomj2.disabled = true
 	if Input.is_key_pressed(KEY_Y) and flag:
-		dead_count += 1
+		death_count += 1
 		dialog_player.background.visible = false
 		dialog_player.text_label.text = ""
 		flag = false
@@ -19,6 +21,7 @@ func _process(delta):
 		dialog_player.background.visible = false
 		dialog_player.text_label.text = ""
 		flag = false
+
 
 func _on_read_letter_btn_pressed():
 	dialog_player.background.visible = true

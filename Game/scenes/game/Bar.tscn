@@ -1,11 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sources/barBackground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game/mainCharacter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/NPCscene/barman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game/Area2D.gd" type="Script" id=5]
+[ext_resource path="res://scenes/game/Bar.gd" type="Script" id=6]
+[ext_resource path="res://ui/DialogPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game/DialogArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/Minecraftia.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.5, 192.75 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 78.5, 138.375 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.878431, 0.847059, 0.345098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.517647, 0.443137, 0.368627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.247059, 0.2, 0.184314, 1 )
+
+[sub_resource type="GDScript" id=7]
+resource_name = "read_letter_btn"
+script/source = "extends Button
+"
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -15,232 +44,273 @@ margin_bottom = 40.0
 texture = ExtResource( 1 )
 centered = false
 
-[node name="ground" parent="." instance=ExtResource( 3 )]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ground" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 0, 592 )
 
-[node name="ground33" parent="." instance=ExtResource( 3 )]
+[node name="ground33" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 208 )
 
-[node name="ground34" parent="." instance=ExtResource( 3 )]
+[node name="ground34" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 240 )
 
-[node name="ground35" parent="." instance=ExtResource( 3 )]
+[node name="ground35" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 272 )
 
-[node name="ground36" parent="." instance=ExtResource( 3 )]
+[node name="ground36" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 304 )
 
-[node name="ground37" parent="." instance=ExtResource( 3 )]
+[node name="ground37" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 336 )
 
-[node name="ground38" parent="." instance=ExtResource( 3 )]
+[node name="ground38" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 368 )
 
-[node name="ground39" parent="." instance=ExtResource( 3 )]
+[node name="ground39" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 400 )
 
-[node name="ground40" parent="." instance=ExtResource( 3 )]
+[node name="ground40" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 432 )
 
-[node name="ground41" parent="." instance=ExtResource( 3 )]
+[node name="ground41" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 464 )
 
-[node name="ground42" parent="." instance=ExtResource( 3 )]
+[node name="ground42" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 496 )
 
-[node name="ground43" parent="." instance=ExtResource( 3 )]
+[node name="ground43" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 528 )
 
-[node name="ground44" parent="." instance=ExtResource( 3 )]
+[node name="ground44" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 560 )
 
-[node name="ground45" parent="." instance=ExtResource( 3 )]
+[node name="ground45" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( -32, 592 )
 
-[node name="ground2" parent="." instance=ExtResource( 3 )]
+[node name="ground2" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 992, 592 )
 
-[node name="ground46" parent="." instance=ExtResource( 3 )]
+[node name="ground46" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 272 )
 
-[node name="ground47" parent="." instance=ExtResource( 3 )]
+[node name="ground47" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 304 )
 
-[node name="ground48" parent="." instance=ExtResource( 3 )]
+[node name="ground48" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 336 )
 
-[node name="ground49" parent="." instance=ExtResource( 3 )]
+[node name="ground49" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 368 )
 
-[node name="ground50" parent="." instance=ExtResource( 3 )]
+[node name="ground50" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 400 )
 
-[node name="ground51" parent="." instance=ExtResource( 3 )]
+[node name="ground51" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 432 )
 
-[node name="ground52" parent="." instance=ExtResource( 3 )]
+[node name="ground52" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 464 )
 
-[node name="ground53" parent="." instance=ExtResource( 3 )]
+[node name="ground53" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 496 )
 
-[node name="ground54" parent="." instance=ExtResource( 3 )]
+[node name="ground54" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 528 )
 
-[node name="ground55" parent="." instance=ExtResource( 3 )]
+[node name="ground55" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 560 )
 
-[node name="ground56" parent="." instance=ExtResource( 3 )]
+[node name="ground56" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 1024, 592 )
 
-[node name="ground3" parent="." instance=ExtResource( 3 )]
+[node name="ground3" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 960, 592 )
 
-[node name="ground4" parent="." instance=ExtResource( 3 )]
+[node name="ground4" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 928, 592 )
 
-[node name="ground5" parent="." instance=ExtResource( 3 )]
+[node name="ground5" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 896, 592 )
 
-[node name="ground6" parent="." instance=ExtResource( 3 )]
+[node name="ground6" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 864, 592 )
 
-[node name="ground7" parent="." instance=ExtResource( 3 )]
+[node name="ground7" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 832, 592 )
 
-[node name="ground8" parent="." instance=ExtResource( 3 )]
+[node name="ground8" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 800, 592 )
 
-[node name="ground9" parent="." instance=ExtResource( 3 )]
+[node name="ground9" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 768, 592 )
 
-[node name="ground10" parent="." instance=ExtResource( 3 )]
+[node name="ground10" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 736, 592 )
 
-[node name="ground11" parent="." instance=ExtResource( 3 )]
+[node name="ground11" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 704, 592 )
 
-[node name="ground12" parent="." instance=ExtResource( 3 )]
+[node name="ground12" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 672, 592 )
 
-[node name="ground13" parent="." instance=ExtResource( 3 )]
+[node name="ground13" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 640, 592 )
 
-[node name="ground14" parent="." instance=ExtResource( 3 )]
+[node name="ground14" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 608, 592 )
 
-[node name="ground15" parent="." instance=ExtResource( 3 )]
+[node name="ground15" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 576, 592 )
 
-[node name="ground16" parent="." instance=ExtResource( 3 )]
+[node name="ground16" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 544, 592 )
 
-[node name="ground17" parent="." instance=ExtResource( 3 )]
+[node name="ground17" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 512, 592 )
 
-[node name="ground18" parent="." instance=ExtResource( 3 )]
+[node name="ground18" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 480, 592 )
 
-[node name="ground19" parent="." instance=ExtResource( 3 )]
+[node name="ground19" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 448, 592 )
 
-[node name="ground20" parent="." instance=ExtResource( 3 )]
+[node name="ground20" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 416, 592 )
 
-[node name="ground21" parent="." instance=ExtResource( 3 )]
+[node name="ground21" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 384, 592 )
 
-[node name="ground22" parent="." instance=ExtResource( 3 )]
+[node name="ground22" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 352, 592 )
 
-[node name="ground23" parent="." instance=ExtResource( 3 )]
+[node name="ground23" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 320, 592 )
 
-[node name="ground24" parent="." instance=ExtResource( 3 )]
+[node name="ground24" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 288, 592 )
 
-[node name="ground25" parent="." instance=ExtResource( 3 )]
+[node name="ground25" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 256, 592 )
 
-[node name="ground26" parent="." instance=ExtResource( 3 )]
+[node name="ground26" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 224, 592 )
 
-[node name="ground27" parent="." instance=ExtResource( 3 )]
+[node name="ground27" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 192, 592 )
 
-[node name="ground28" parent="." instance=ExtResource( 3 )]
+[node name="ground28" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 160, 592 )
 
-[node name="ground29" parent="." instance=ExtResource( 3 )]
+[node name="ground29" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 128, 592 )
 
-[node name="ground30" parent="." instance=ExtResource( 3 )]
+[node name="ground30" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 96, 592 )
 
-[node name="ground31" parent="." instance=ExtResource( 3 )]
+[node name="ground31" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 64, 592 )
 
-[node name="ground32" parent="." instance=ExtResource( 3 )]
+[node name="ground32" parent="Node2D" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 32, 592 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 448, 280 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 440 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 448, 280 )
+[node name="portal" type="Area2D" parent="."]
+position = Vector2( 1039, 263 )
+script = ExtResource( 5 )
+scene = "res://scenes/game/Police.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
+position = Vector2( -51, 121 )
+shape = SubResource( 1 )
+
+[node name="DialogAreaBomj" parent="." instance=ExtResource( 8 )]
+position = Vector2( 819, 344 )
+dialog_key = "bartender"
+
+[node name="CollisionShape2D" parent="DialogAreaBomj" index="0"]
+position = Vector2( -298, 52 )
+shape = SubResource( 2 )
+
+[node name="DialogPlayer" parent="." instance=ExtResource( 7 )]
+scene_text_file = "res://json/world_dialog.json"
+
+[node name="read_letter_btn" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 239.0
+margin_bottom = 87.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+enabled_focus_mode = 0
+text = "Прочитать письмо"
+script = SubResource( 7 )
+
+[connection signal="body_entered" from="portal" to="portal" method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="read_letter_btn" to="." method="_on_read_letter_btn_pressed"]
+
+[editable path="DialogAreaBomj"]
