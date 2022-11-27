@@ -1,0 +1,245 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sources/ChertiBackground.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game/ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/mainCharacter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game/NPCscene/Chert1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game/DialogArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/DialogPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game/NPCscene/Chert2.tscn" type="PackedScene" id=7]
+
+[sub_resource type="GDScript" id=2]
+resource_name = "Controller"
+script/source = "extends Node2D
+
+onready var dialog_player = $DialogPlayer
+onready var collider_bomj = $StaticBody2D/CollisionShape2D
+
+func _process(delta):
+	if dialog_player.flag == true:
+		collider_bomj.disabled = true
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70, 119.75 )
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="StreetBackground" type="Sprite" parent="TextureRect"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ground" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 128, 504 )
+
+[node name="ground31" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 408 )
+
+[node name="ground42" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 344 )
+
+[node name="ground44" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 152 )
+
+[node name="ground45" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 184 )
+
+[node name="ground46" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 216 )
+
+[node name="ground47" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 248 )
+
+[node name="ground48" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 280 )
+
+[node name="ground49" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 312 )
+
+[node name="ground43" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 376 )
+
+[node name="ground39" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 440 )
+
+[node name="ground40" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 472 )
+
+[node name="ground41" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 96, 504 )
+
+[node name="ground2" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 256, 502 )
+
+[node name="ground10" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 480, 502 )
+
+[node name="ground17" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 736, 503 )
+
+[node name="ground34" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 440 )
+
+[node name="ground37" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 376 )
+
+[node name="ground50" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 184 )
+
+[node name="ground51" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 216 )
+
+[node name="ground52" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 248 )
+
+[node name="ground53" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 280 )
+
+[node name="ground54" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 312 )
+
+[node name="ground55" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 344 )
+
+[node name="ground38" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 408 )
+
+[node name="ground35" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 472 )
+
+[node name="ground36" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 864, 504 )
+
+[node name="ground26" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 800, 504 )
+
+[node name="ground28" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 832, 504 )
+
+[node name="ground27" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 768, 504 )
+
+[node name="ground18" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 704, 502 )
+
+[node name="ground19" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 672, 502 )
+
+[node name="ground20" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 640, 502 )
+
+[node name="ground21" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 608, 502 )
+
+[node name="ground22" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 576, 502 )
+
+[node name="ground23" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 544, 502 )
+
+[node name="ground24" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 512, 502 )
+
+[node name="ground11" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 448, 502 )
+
+[node name="ground12" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 416, 502 )
+
+[node name="ground13" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 384, 502 )
+
+[node name="ground14" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 352, 502 )
+
+[node name="ground15" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 320, 502 )
+
+[node name="ground16" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 288, 502 )
+
+[node name="ground3" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 224, 502 )
+
+[node name="ground4" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 192, 502 )
+
+[node name="ground5" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 160, 502 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 213, 368 )
+
+[node name="DialogAreaBomj" parent="." instance=ExtResource( 5 )]
+position = Vector2( 819, 344 )
+dialog_key = "bomj"
+
+[node name="CollisionShape2D" parent="DialogAreaBomj" index="0"]
+position = Vector2( -261, 30 )
+shape = SubResource( 1 )
+
+[node name="DialogPlayer" parent="." instance=ExtResource( 6 )]
+scene_text_file = "res://json/world_dialog.json"
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 546, 256 )
+
+[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource( 7 )]
+position = Vector2( 85, 12 )
+
+[editable path="DialogAreaBomj"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Prosecutor.jpg-ad523543c70ccec1e1f8737344b15a78.stex"
+path="res://.import/ChertiBackground.png-f0adb389ed5e61a4821eb44344a36eda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/NPC/Prosecutor.jpg"
-dest_files=[ "res://.import/Prosecutor.jpg-ad523543c70ccec1e1f8737344b15a78.stex" ]
+source_file="res://sources/ChertiBackground.png"
+dest_files=[ "res://.import/ChertiBackground.png-f0adb389ed5e61a4821eb44344a36eda.stex" ]
 
 [params]
 
